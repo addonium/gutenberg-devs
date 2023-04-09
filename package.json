@@ -1,0 +1,38 @@
+{
+	"name": "gutenberg-devs",
+	"version": "0.0.1",
+	"main": "build/blocks/index.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start"
+	},
+	"prettier": "@wordpress/prettier-config",
+	"stylelint": {
+		"extends": "@wordpress/stylelint-config/scss"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/addonium/gutenberg-devs.git"
+	},
+	"author": "ADDONIUM",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/addonium/gutenberg-devs/issues"
+	},
+	"homepage": "https://github.com/addonium/gutenberg-devs#readme",
+	"description": "",
+	"dependencies": {
+		"@wordpress/eslint-plugin": "^14.3.0",
+		"@wordpress/prettier-config": "^2.13.0",
+		"@wordpress/scripts": "^26.1.0",
+		"@wordpress/stylelint-config": "^21.13.0"
+	},
+	"devDependencies": {
+		"eslint-config-prettier": "^8.8.0"
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"apiVersion": 2,
+	"name": "boilerplate/startup",
+	"version": "0.1.0",
+	"title": "StartUP Block",
+	"category": "gutenberg-Devs",
+	"icon": "heart",
+	"description": "Startup block for turorial purpose",
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"attributes": {
+		"content": {
+			"type": "string",
+			"default": "Hello World!"
+		},
+		"color": {
+			"type": "string",
+			"default": "#00ff00"
+		}
+	},
+	"textdomain": "gutenberg-Devs",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
