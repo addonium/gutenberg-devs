@@ -1,9 +1,9 @@
 {
   "apiVersion": 2,
-  "name": "boilerplate/startup",
+  "name": "gutenberg-devs/startup",
   "version": "0.1.0",
   "title": "StartUP Block",
-  "category": "gutenberg-Devs",
+  "category": "gutenberg-devs",
   "icon": "heart",
   "description": "Startup block for turorial purpose",
   "supports": {
@@ -20,7 +20,7 @@
       "default": "#00ff00"
     }
   },
-  "textdomain": "gutenberg-Devs",
+  "textdomain": "gutenberg-devs",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css"

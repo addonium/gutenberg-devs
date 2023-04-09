@@ -8,7 +8,7 @@
  * Author: TALIB
  * Author URI: https://talib.netlify.app
  * License: GPLv3
- * Text Domain: gutenberg-Devs
+ * Text Domain: gutenberg-devs
  * Domain Path: /languages/
  */
 
@@ -61,6 +61,7 @@ final class GutenbergDevs {
 		define('GBK_VERSION', '1.0.0');
 		define('GBK_URL', plugin_dir_url(__FILE__));
 		define('GBK_INC_URL', GBK_URL . 'includes/');
+		define('GBK_ASSETS_URL', GBK_URL . 'assets/');
 	}
 
 	/**
@@ -87,8 +88,8 @@ final class GutenbergDevs {
 		return array_merge(
 			array(
 				array(
-					'slug'  => 'gutenberg-Devs',
-					'title' => __('Gutenberg Devs', 'gutenberg-Devs'),
+					'slug'  => 'gutenberg-devs',
+					'title' => __('Gutenberg Devs', 'gutenberg-devs'),
 				),
 			),
 			$categories,
@@ -100,12 +101,16 @@ final class GutenbergDevs {
 	 */
 	public function gutenberg_Devs_external_libraries() {
 		// enqueue JS
-		wp_enqueue_script('boilerplate-lib', GBK_INC_URL . 'js/plugin.js', array(), GBK_VERSION, true);
+		wp_enqueue_style('gbd-uikit', GBK_ASSETS_URL . 'css/gbd-uikit.min.css', [], time());
+		wp_enqueue_script('gbd-uikit', GBK_ASSETS_URL . 'js/gbd-uikit.min.js', [], time());
+		// wp_enqueue_script('boilerplate-lib', GBK_INC_URL . 'js/plugin.js', array(), GBK_VERSION, true);
 	}
 	public function gutenberg_Devs_admin_assets() {
 		// enqueue JS
 		// wp_enqueue_script('boilerplate-lib', GBK_INC_URL . 'js/plugin.js', array(), GBK_VERSION, true);
 		wp_enqueue_style('admin-css', GBK_INC_URL . 'css/editor.css', [], time());
+		// wp_enqueue_style('gbd-uikit', GBK_ASSETS_URL . 'css/gbd-uikit.min.css', [], time());
+		// wp_enqueue_script('gbd-uikit', GBK_ASSETS_URL . 'js/gbd-uikit.min.js', [], time());
 	}
 }
 

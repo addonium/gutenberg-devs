@@ -3,7 +3,12 @@ import {
 	useBlockProps,
 	InspectorControls,
 	RichText,
+	// useInnerBlocksProps,
+InnerBlocks
+
+
 } from '@wordpress/block-editor';
+
 import {
 	TabPanel,
 	Panel,
@@ -14,6 +19,10 @@ import {
 	Button,
 } from '@wordpress/components';
 const { Fragment } = wp.element;
+// const innerBlocksProps = useInnerBlocksProps({
+// 	className: 'c-accordion__content',
+// });
+
 import {
 	BUTTON_STYLES,
 	FLIPBOX_SIDES,
@@ -77,31 +86,31 @@ export default function Edit({ attributes, setAttributes }) {
 	return (
 		<Fragment>
 			<InspectorControls keys="controls">
-				<div className="eb-panel-control">
+				<div className="gbd-panel-control">
 					<TabPanel
-						className="eb-parent-tab-panel"
+						className="gbd-parent-tab-panel"
 						activeClass="active-tab"
 						// onSelect={onSelect}
 						tabs={[
 							{
 								name: 'general',
 								title: __('General', 'gutenebrg-Devs'),
-								className: 'eb-tab general',
+								className: 'gbd-tabs general',
 							},
 							{
 								name: 'styles',
 								title: __('Style', 'gutenebrg-Devs'),
-								className: 'eb-tab styles',
+								className: 'gbd-tabs styles',
 							},
 							{
 								name: 'advanced',
 								title: __('Advanced', 'gutenebrg-Devs'),
-								className: 'eb-tab advanced',
+								className: 'gbd-tabs advanced',
 							},
 						]}
 					>
 						{(tab) => (
-							<div className={'eb-tab-controls' + tab.name}>
+							<div className={'gbd-tabs-controls' + tab.name}>
 								{tab.name === 'general' && (
 									<Fragment>
 										<PanelBody
@@ -113,7 +122,7 @@ export default function Edit({ attributes, setAttributes }) {
 												id="base-controls"
 												label={__(
 													'Selected Slide',
-													'gutenberg-Devs'
+													'gutenberg-devs'
 												)}
 												help="Enter some text"
 											>
@@ -154,7 +163,19 @@ export default function Edit({ attributes, setAttributes }) {
 				</div>
 			</InspectorControls>
 
-			<div {...useBlockProps()}>hello</div>
+			<div {...useBlockProps()}>
+				<ul data-gbd-accordion>
+					<li className>
+						<a className="gbd-accordion-title" href="#">
+							Item 1
+						</a>
+						<div className="gbd-accordion-content">
+							<InnerBlocks>
+							</InnerBlocks>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</Fragment>
 	);
 }

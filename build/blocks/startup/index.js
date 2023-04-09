@@ -367,6 +367,10 @@ __webpack_require__.r(__webpack_exports__);
 const {
   Fragment
 } = wp.element;
+// const innerBlocksProps = useInnerBlocksProps({
+// 	className: 'c-accordion__content',
+// });
+
 
 
 // editor style
@@ -423,34 +427,34 @@ function Edit(_ref) {
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
     keys: "controls"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "eb-panel-control"
+    className: "gbd-panel-control"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TabPanel, {
-    className: "eb-parent-tab-panel",
+    className: "gbd-parent-tab-panel",
     activeClass: "active-tab"
     // onSelect={onSelect}
     ,
     tabs: [{
       name: 'general',
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('General', 'gutenebrg-Devs'),
-      className: 'eb-tab general'
+      className: 'gbd-tabs general'
     }, {
       name: 'styles',
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Style', 'gutenebrg-Devs'),
-      className: 'eb-tab styles'
+      className: 'gbd-tabs styles'
     }, {
       name: 'advanced',
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Advanced', 'gutenebrg-Devs'),
-      className: 'eb-tab advanced'
+      className: 'gbd-tabs advanced'
     }]
   }, tab => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: 'eb-tab-controls' + tab.name
+    className: 'gbd-tabs-controls' + tab.name
   }, tab.name === 'general' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: "My Block Settings",
     icon: "welcome-widgets-menus",
     initialOpen: true
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
     id: "base-controls",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Selected Slide', 'gutenberg-Devs'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Selected Slide', 'gutenberg-devs'),
     help: "Enter some text"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ButtonGroup, null, _constant_index_js__WEBPACK_IMPORTED_MODULE_4__.FLIPBOX_SIDES.map((item, index) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     key: index,
@@ -459,7 +463,16 @@ function Edit(_ref) {
     onClick: () => setAttributes({
       selectedSide: item.value
     })
-  }, item.label)))))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), "hello"));
+  }, item.label)))))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+    "data-gbd-accordion": true
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
+    className: true
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    className: "gbd-accordion-title",
+    href: "#"
+  }, "Item 1"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "gbd-accordion-content"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, null))))));
 }
 
 /***/ }),
@@ -523,13 +536,62 @@ function save(_ref) {
     content,
     color
   } = attributes;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
-    tagName: "h4",
-    value: content,
-    style: {
-      color
-    }
-  }));
+  // var NewComponent = React.createClass({
+  // 	render: function () {
+  // 		return (
+  // 			<ul gbd-accordion>
+  // 				<li className="gbd-open">
+  // 					<a className="gbd-accordion-title" href="#">
+  // 						Item 1
+  // 					</a>
+  // 					<div className="gbd-accordion-content">
+  // 						<p>
+  // 							Lorem ipsum dolor sit amet, consectetur
+  // 							adipiscing elit, sed do eiusmod tempor
+  // 							incididunt ut labore et dolore magna aliqua.
+  // 						</p>
+  // 					</div>
+  // 				</li>
+  // 				<li>
+  // 					<a className="gbd-accordion-title" href="#">
+  // 						Item 2
+  // 					</a>
+  // 					<div className="gbd-accordion-content">
+  // 						<p>
+  // 							Ut enim ad minim veniam, quis nostrud
+  // 							exercitation ullamco laboris nisi ut aliquip ex
+  // 							ea commodo consequat. Duis aute irure dolor
+  // 							reprehenderit.
+  // 						</p>
+  // 					</div>
+  // 				</li>
+  // 				<li>
+  // 					<a className="gbd-accordion-title" href="#">
+  // 						Item 3
+  // 					</a>
+  // 					<div className="gbd-accordion-content">
+  // 						<p>
+  // 							Duis aute irure dolor in reprehenderit in
+  // 							voluptate velit esse cillum dolore eu fugiat
+  // 							nulla pariatur. Excepteur sint occaecat
+  // 							cupidatat proident.
+  // 						</p>
+  // 					</div>
+  // 				</li>
+  // 			</ul>
+  // 		);
+  // 	},
+  // });
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+    "data-gbd-accordion": true
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
+    className: "gbd-open"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    className: "gbd-accordion-title",
+    href: "#"
+  }, "Item 1"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "gbd-accordion-content"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.Content, null)))));
 }
 
 /***/ }),
@@ -647,7 +709,7 @@ module.exports = window["wp"]["i18n"];
   \***************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"apiVersion":2,"name":"boilerplate/startup","version":"0.1.0","title":"StartUP Block","category":"gutenberg-Devs","icon":"heart","description":"Startup block for turorial purpose","supports":{"html":false,"anchor":true},"attributes":{"content":{"type":"string","default":"Hello World!"},"color":{"type":"string","default":"#00ff00"}},"textdomain":"gutenberg-Devs","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"apiVersion":2,"name":"gutenberg-devs/startup","version":"0.1.0","title":"StartUP Block","category":"gutenberg-devs","icon":"heart","description":"Startup block for turorial purpose","supports":{"html":false,"anchor":true},"attributes":{"content":{"type":"string","default":"Hello World!"},"color":{"type":"string","default":"#00ff00"}},"textdomain":"gutenberg-devs","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 
