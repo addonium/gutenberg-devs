@@ -9,4 +9,3 @@ export const CONTENT_POSITION = [
 ];
 
 import './blocks/startup/index';
-import './blocks/accordion/index';

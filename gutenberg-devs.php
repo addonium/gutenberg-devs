@@ -78,7 +78,6 @@ final class GutenbergDevs {
 	public function gutenberg_Devs_blocks_init() {
 		// register single block
 		$this->gutenberg_Devs_register_block('startup');
-		$this->gutenberg_Devs_register_block('accordion');
 	}
 
 	/**

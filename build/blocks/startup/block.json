@@ -6,17 +6,14 @@
   "category": "gutenberg-devs",
   "icon": "heart",
   "description": "Startup block for turorial purpose",
-  "parent": [
-    "gutenberg-devs/startup"
-  ],
   "supports": {
     "html": false,
-    "reusable": false
+    "anchor": true
   },
   "attributes": {
     "content": {
       "type": "string",
-      "Default": "Heading Title"
+      "default": "Hello World!"
     },
     "color": {
       "type": "string",

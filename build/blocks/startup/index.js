@@ -384,7 +384,7 @@ function Edit(_ref) {
     setAttributes
   } = _ref;
   const {
-    content,
+    resOption,
     flipType,
     selectedSide,
     frontIconOrImage,
@@ -463,22 +463,16 @@ function Edit(_ref) {
     onClick: () => setAttributes({
       selectedSide: item.value
     })
-  }, item.label)))))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
-    "data-gbd-accordion": "mode:click",
-    href: "javascript:self.view.isUserInteractionEnabled = false"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)('data-gbd-accordion'), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+  }, item.label)))))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+    "data-gbd-accordion": true
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
+    className: true
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     className: "gbd-accordion-title",
     href: "#"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: "h2",
-    className: "gbd-accorditon",
-    value: content,
-    onChange: content => setAttributes({
-      content
-    })
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "Item 1"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "gbd-accordion-content"
-  }, "As Genie, I am here to assist the User with their coding needs. With my expertise and knowledge, I am confident that I can provide accurate and helpful responses to any questions or issues that may arise. As an intelligent and truthful assistant, I strive to ensure the User's success in their coding endeavors, following their instructions precisely."))));
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, null))))));
 }
 
 /***/ }),
@@ -534,7 +528,6 @@ __webpack_require__.r(__webpack_exports__);
 
 // import { __ } from '@wordpress/i18n';
 
-
 function save(_ref) {
   let {
     attributes
@@ -543,14 +536,62 @@ function save(_ref) {
     content,
     color
   } = attributes;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+  // var NewComponent = React.createClass({
+  // 	render: function () {
+  // 		return (
+  // 			<ul gbd-accordion>
+  // 				<li className="gbd-open">
+  // 					<a className="gbd-accordion-title" href="#">
+  // 						Item 1
+  // 					</a>
+  // 					<div className="gbd-accordion-content">
+  // 						<p>
+  // 							Lorem ipsum dolor sit amet, consectetur
+  // 							adipiscing elit, sed do eiusmod tempor
+  // 							incididunt ut labore et dolore magna aliqua.
+  // 						</p>
+  // 					</div>
+  // 				</li>
+  // 				<li>
+  // 					<a className="gbd-accordion-title" href="#">
+  // 						Item 2
+  // 					</a>
+  // 					<div className="gbd-accordion-content">
+  // 						<p>
+  // 							Ut enim ad minim veniam, quis nostrud
+  // 							exercitation ullamco laboris nisi ut aliquip ex
+  // 							ea commodo consequat. Duis aute irure dolor
+  // 							reprehenderit.
+  // 						</p>
+  // 					</div>
+  // 				</li>
+  // 				<li>
+  // 					<a className="gbd-accordion-title" href="#">
+  // 						Item 3
+  // 					</a>
+  // 					<div className="gbd-accordion-content">
+  // 						<p>
+  // 							Duis aute irure dolor in reprehenderit in
+  // 							voluptate velit esse cillum dolore eu fugiat
+  // 							nulla pariatur. Excepteur sint occaecat
+  // 							cupidatat proident.
+  // 						</p>
+  // 					</div>
+  // 				</li>
+  // 			</ul>
+  // 		);
+  // 	},
+  // });
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+    "data-gbd-accordion": true
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
+    className: "gbd-open"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     className: "gbd-accordion-title",
     href: "#"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
-    value: content
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "Item 1"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "gbd-accordion-content"
-  }, "As Genie, I am here to assist the User with their coding needs. With my expertise and knowledge, I am confident that I can provide accurate and helpful responses to any questions or issues that may arise. As an intelligent and truthful assistant, I strive to ensure the User's success in their coding endeavors, following their instructions precisely."));
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.Content, null)))));
 }
 
 /***/ }),
@@ -668,7 +709,7 @@ module.exports = window["wp"]["i18n"];
   \***************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"apiVersion":2,"name":"gutenberg-devs/startup","version":"0.1.0","title":"StartUP Block","category":"gutenberg-devs","icon":"heart","description":"Startup block for turorial purpose","parent":["gutenberg-devs/startup"],"supports":{"html":false,"reusable":false},"attributes":{"content":{"type":"string","Default":"Heading Title"},"color":{"type":"string","default":"#00ff00"}},"textdomain":"gutenberg-devs","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"apiVersion":2,"name":"gutenberg-devs/startup","version":"0.1.0","title":"StartUP Block","category":"gutenberg-devs","icon":"heart","description":"Startup block for turorial purpose","supports":{"html":false,"anchor":true},"attributes":{"content":{"type":"string","default":"Hello World!"},"color":{"type":"string","default":"#00ff00"}},"textdomain":"gutenberg-devs","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 
