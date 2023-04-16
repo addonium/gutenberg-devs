@@ -1,27 +1,67 @@
 // import { __ } from '@wordpress/i18n';
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
-import {
-	useBlockProps,
-	InspectorControls,
-	RichText,
-	// useInnerBlocksProps,
-	InnerBlocks,
-} from '@wordpress/block-editor';
+
 export default function save({ attributes }) {
 	const { content, color } = attributes;
+	// var NewComponent = React.createClass({
+	// 	render: function () {
+	// 		return (
+	// 			<ul gbd-accordion>
+	// 				<li className="gbd-open">
+	// 					<a className="gbd-accordion-title" href="#">
+	// 						Item 1
+	// 					</a>
+	// 					<div className="gbd-accordion-content">
+	// 						<p>
+	// 							Lorem ipsum dolor sit amet, consectetur
+	// 							adipiscing elit, sed do eiusmod tempor
+	// 							incididunt ut labore et dolore magna aliqua.
+	// 						</p>
+	// 					</div>
+	// 				</li>
+	// 				<li>
+	// 					<a className="gbd-accordion-title" href="#">
+	// 						Item 2
+	// 					</a>
+	// 					<div className="gbd-accordion-content">
+	// 						<p>
+	// 							Ut enim ad minim veniam, quis nostrud
+	// 							exercitation ullamco laboris nisi ut aliquip ex
+	// 							ea commodo consequat. Duis aute irure dolor
+	// 							reprehenderit.
+	// 						</p>
+	// 					</div>
+	// 				</li>
+	// 				<li>
+	// 					<a className="gbd-accordion-title" href="#">
+	// 						Item 3
+	// 					</a>
+	// 					<div className="gbd-accordion-content">
+	// 						<p>
+	// 							Duis aute irure dolor in reprehenderit in
+	// 							voluptate velit esse cillum dolore eu fugiat
+	// 							nulla pariatur. Excepteur sint occaecat
+	// 							cupidatat proident.
+	// 						</p>
+	// 					</div>
+	// 				</li>
+	// 			</ul>
+	// 		);
+	// 	},
+	// });
 	return (
-		<li {...useBlockProps.save()}>
-			<a className="gbd-accordion-title" href="#">
-				<RichText.Content  value={content}/>
-			</a>
-			<div className="gbd-accordion-content">
-				As Genie, I am here to assist the User with their coding needs.
-				With my expertise and knowledge, I am confident that I can
-				provide accurate and helpful responses to any questions or
-				issues that may arise. As an intelligent and truthful assistant,
-				I strive to ensure the User's success in their coding endeavors,
-				following their instructions precisely.
-			</div>
-		</li>
+		<div {...useBlockProps.save()}>
+			<ul data-gbd-accordion>
+				<li className="gbd-open">
+					<a className="gbd-accordion-title" href="#">
+						Item 1
+					</a>
+					<div className="gbd-accordion-content">
+						<InnerBlocks.Content />
+					</div>
+				</li>
+			</ul>
+		</div>
 	);
 }
